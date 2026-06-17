@@ -1,16 +1,25 @@
-# Zensu Homebrew Tap
+# MKITConsulting Homebrew Tap
 
-Homebrew tap for [Zensu](https://zensu.dev/) tools.
+Homebrew tap for [MKITConsulting](https://github.com/MKITConsulting) command-line tools.
 
-## zensu CLI
+## Install
 
 ```bash
-brew install --cask mkitconsulting/tap/zensu
+brew install --cask mkitconsulting/tap/<name>
 ```
 
-Upgrade with `brew upgrade --cask zensu`. macOS, Linux, Intel and Apple Silicon.
+Auto-taps; or run `brew tap mkitconsulting/tap` first. Upgrade with
+`brew upgrade --cask <name>`. Casks support macOS and Linux, Intel and Apple Silicon.
 
-Casks in this tap are generated and published automatically by
-[GoReleaser](https://goreleaser.com/) from
-[MKITConsulting/zensu-cli](https://github.com/MKITConsulting/zensu-cli) on each
-tagged release — do not edit `Casks/*.rb` by hand.
+## Available casks
+
+| Cask | Description | Source repo |
+|------|-------------|-------------|
+| [`zensu`](Casks/zensu.rb) | GitHub-CLI-style terminal client for the Zensu Product Lifecycle Manager | [MKITConsulting/zensu-cli](https://github.com/MKITConsulting/zensu-cli) |
+
+## Maintenance
+
+Casks in `Casks/*.rb` are generated and pushed automatically by
+[GoReleaser](https://goreleaser.com/) from each tool's own repository on every
+tagged release — do not edit them by hand. Adding a tool means a new
+`homebrew_casks` block in that tool's `.goreleaser.yaml` pointing at this tap.
